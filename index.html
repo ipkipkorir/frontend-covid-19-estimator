@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>COVID19 ESTIMATOR</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width initial-scale=1 shrink-to-fit=no">
+	<meta name="description" content="COVID19 Estimator application">
+    <meta name="keywords" content="coronavirus, virus, covid19, estimator,impact, severe impact, hospital beds, ">
+	<style type="text/css">
+		body, html {
+			font-family: Arial, Verdana, Helvetica, sans-serif;
+			font-size: 18px;
+			line-height: 1.5;
+			margin: 0;
+			padding: 0;
+			background: url("./img/kimani_maruge.jpg") center no-repeat;
+			background-size: cover;
+			background-attachment: fixed;
+		}
+		#main {
+			margin: 0;
+			padding: 0;
+			background: rgba(00,00,99,0.5);
+			width: 100%;
+			height: 100vh;
+		}
+
+		#title, #description {
+			width: 60%;
+			margin: 0 auto;
+			text-align: center;
+			background-color: dodgerblue;
+			color: #ffffff;
+			font-weight: bold;
+			padding: 16px 30px 8px;
+		}
+		form p {
+			text-align: left;
+			margin: 20px 0px 0px 0px;
+			width: auto;
+			padding-left: 0px; 
+		}
+		form {
+			width: 60%;
+			margin: 0 auto;
+			padding: 30px;
+			display: flex;
+			flex-direction: column;
+			background: #646464;
+			font-size: 18px;
+			color: #ffffff;
+		}
+
+		fieldset {
+			border: 2px solid rgba(00,00,99,0.5);
+			border-radius: 5px;
+			margin-top: 12px;
+		}
+
+		input[type="text"], input[type="number"], #dropdown {
+			padding: 8px;
+			border-radius: 5px;
+		}
+		label not-first-child {
+			padding-top: 10px;
+		}
+		#email-label, #number-label {
+			margin-top: 25px
+		}
+		#dropdown {
+			width: auto;
+			margin-top: 4px;
+		}
+		#submit {
+			margin-top: 20px;
+			padding-top: 18px;
+			padding-bottom: 18px;
+			background: dodgerblue;
+			color: #ffffff;
+			font-weight: bold;
+			border: 0;
+			border-radius: 5px;
+		}
+		#submit:hover {
+			cursor: pointer;
+			background: rgba(0,0,99,0.5);
+		}
+
+		/*mobile design*/
+		@media screen and (max-width: 768px) {
+			body, html {
+				
+				margin: 0;
+				padding: 0;
+				background: #646464;
+			}
+			#main {
+				background: #646464;
+			}
+			header {
+				margin: 0 auto;
+			}
+			#title, #description {
+				width: inherit;
+				margin: 0;
+				font-size: 20px;
+			}
+			#covid-19-form {
+				width: 96%;
+				margin: 0 auto;
+				padding: 0;
+			}
+			fieldset {
+				border: 2px dodgerblue solid;
+			}
+			#submit {
+				margin: 12px auto;
+				width: 100%;
+				bottom: 8px;
+			}
+		}
+	</style>
+</head>
+<body>
+	<main id="main">
+		<header >
+			<h1 id="title">
+				COVID19 ESTIMATOR
+			</h1>
+			<p id="description">
+				Fill out the form below to see estimated impact of COVID19
+			</p>
+		</header>
+		<form id="covid-19-form">
+			<label id="population-label">Population:</label>
+			<input type="number" name="population" data-population placeholder="Enter population size" required>
+			<label id="time-to-elapse-label">Time to Elapse:</label>
+			<input type="number" name="time_to_elapse" data-time-to-elapse placeholder="Enter time to elapse" required>
+			<label id="reported-cases-label">Reported Cases:</label>
+			<input type="number" name="reported_cases" data-reported-cases placeholder="Enter reported cases" required>
+			<label id="total-hospital-beds-label">Total Hospital Beds:</label>
+			<input type="number" name="total_hospital_beds" data-total-hospital-beds placeholder="Enter total hospital beds" required>
+
+			<!--Select option -->
+			<p>Period Type</p>
+				<select data-period-type id="dropdown">
+					<option>Days</option>
+					<option>Weeks</option>
+					<option>Months</option>
+				</select>
+			
+			<!-- Submit button-->
+			<button type="submit" data-go-estimate id="submit">Submit</button>
+		</form>
+	</main>
+</body>
+</html>
